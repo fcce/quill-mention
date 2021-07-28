@@ -380,7 +380,7 @@ var Mention = /*#__PURE__*/function () {
       positioningStrategy: "normal",
       defaultMenuOrientation: "bottom",
       blotName: "mention",
-      dataAttributes: ["id", "value", "denotationChar", "link", "target", "disabled"],
+      dataAttributes: ["id", "value", "denotationChar", "link", "linkDocument", "target", "disabled"],
       linkTarget: "_blank",
       onOpen: function onOpen() {
         return true;

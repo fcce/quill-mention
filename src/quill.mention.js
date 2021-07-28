@@ -53,6 +53,7 @@ class Mention {
         "value",
         "denotationChar",
         "link",
+        "linkDocument",
         "target",
         "disabled",
       ],
