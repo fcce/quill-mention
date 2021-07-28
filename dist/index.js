@@ -415,8 +415,8 @@ var Mention = /*#__PURE__*/function () {
     }
 
     this.mentionList = document.createElement("ul");
-    this.mentionList.id = 'quill-mention-list';
-    quill.root.setAttribute('aria-owns', 'quill-mention-list');
+    this.mentionList.id = "quill-mention-list";
+    quill.root.setAttribute("aria-owns", "quill-mention-list");
     this.mentionList.className = this.options.mentionListClass ? this.options.mentionListClass : "";
     this.mentionContainer.appendChild(this.mentionList);
     quill.on("text-change", this.onTextChange.bind(this));
@@ -528,7 +528,7 @@ var Mention = /*#__PURE__*/function () {
       this.mentionContainer.style.display = "none";
       this.mentionContainer.remove();
       this.setIsOpen(false);
-      this.quill.root.removeAttribute('aria-activedescendant');
+      this.quill.root.removeAttribute("aria-activedescendant");
     }
   }, {
     key: "highlightItem",
@@ -544,7 +544,7 @@ var Mention = /*#__PURE__*/function () {
       }
 
       this.mentionList.childNodes[this.itemIndex].classList.add("selected");
-      this.quill.root.setAttribute('aria-activedescendant', this.mentionList.childNodes[this.itemIndex].id);
+      this.quill.root.setAttribute("aria-activedescendant", this.mentionList.childNodes[this.itemIndex].id);
 
       if (scrollItemInView) {
         var itemHeight = this.mentionList.childNodes[this.itemIndex].offsetHeight;
@@ -570,6 +570,7 @@ var Mention = /*#__PURE__*/function () {
 
       if (hasLinkValue) {
         var linkDocument = this.mentionList.childNodes[this.itemIndex].dataset.linkDocument;
+        console.log(this.mentionList.childNodes[this.itemIndex].dataset);
         var hasLinkDocument = typeof linkDocument !== "undefined";
 
         if (hasLinkDocument) {
@@ -724,12 +725,12 @@ var Mention = /*#__PURE__*/function () {
 
         for (var i = 0; i < data.length; i += 1) {
           var li = document.createElement("li");
-          li.id = 'quill-mention-item-' + i;
+          li.id = "quill-mention-item-" + i;
           li.className = this.options.listItemClass ? this.options.listItemClass : "";
 
           if (data[i].disabled) {
             li.className += " disabled";
-            li.setAttribute('aria-hidden', 'true');
+            li.setAttribute("aria-hidden", "true");
           } else if (initialSelection === -1) {
             initialSelection = i;
           }
@@ -905,13 +906,13 @@ var Mention = /*#__PURE__*/function () {
       }
 
       if (topPos >= 0) {
-        this.options.mentionContainerClass.split(' ').forEach(function (className) {
+        this.options.mentionContainerClass.split(" ").forEach(function (className) {
           _this3.mentionContainer.classList.add("".concat(className, "-bottom"));
 
           _this3.mentionContainer.classList.remove("".concat(className, "-top"));
         });
       } else {
-        this.options.mentionContainerClass.split(' ').forEach(function (className) {
+        this.options.mentionContainerClass.split(" ").forEach(function (className) {
           _this3.mentionContainer.classList.add("".concat(className, "-top"));
 
           _this3.mentionContainer.classList.remove("".concat(className, "-bottom"));
