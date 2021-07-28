@@ -238,12 +238,23 @@ class Mention {
     const itemTarget = this.mentionList.childNodes[this.itemIndex].dataset
       .target;
     if (hasLinkValue) {
-      this.mentionList.childNodes[
-        this.itemIndex
-      ].dataset.value = `<a href="${link}" target=${itemTarget ||
-        this.options.linkTarget}>${
-        this.mentionList.childNodes[this.itemIndex].dataset.value
-      }`;
+      const { linkDocument } = this.mentionList.childNodes[this.itemIndex].dataset;
+      const hasLinkDocument = typeof linkDocument !== "undefined";
+      if (hasLinkDocument) {
+        this.mentionList.childNodes[
+          this.itemIndex
+        ].dataset.value = `<a href="${link}" target=${itemTarget ||
+          this.options.linkTarget} >${
+          this.mentionList.childNodes[this.itemIndex].dataset.value
+        }<span>${linkDocument}<span>`;
+      } else {
+        this.mentionList.childNodes[
+          this.itemIndex
+        ].dataset.value = `<a href="${link}" target=${itemTarget ||
+          this.options.linkTarget} >${
+          this.mentionList.childNodes[this.itemIndex].dataset.value
+        }`;
+      }
     }
     return this.mentionList.childNodes[this.itemIndex].dataset;
   }
