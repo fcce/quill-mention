@@ -263,7 +263,7 @@ class Mention {
         ].dataset.value = `<a href="${link}" target=${itemTarget ||
           this.options.linkTarget} >${
           this.mentionList.childNodes[this.itemIndex].dataset.value
-        }<span>${linkDocument}<span>`;
+        }</a><span>${linkDocument}<span>`;
       } else {
         this.mentionList.childNodes[
           this.itemIndex
