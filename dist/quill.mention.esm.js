@@ -570,7 +570,7 @@ var Mention = /*#__PURE__*/function () {
         var hasLinkDocument = typeof linkDocument !== "undefined";
 
         if (hasLinkDocument) {
-          this.mentionList.childNodes[this.itemIndex].dataset.value = "<a href=\"".concat(link, "\" target=").concat(itemTarget || this.options.linkTarget, " >").concat(this.mentionList.childNodes[this.itemIndex].dataset.value, "</a><span>").concat(linkDocument, "<span>");
+          this.mentionList.childNodes[this.itemIndex].dataset.value = "<a href=\"".concat(link, "\" target=").concat(itemTarget || this.options.linkTarget, " >").concat(this.mentionList.childNodes[this.itemIndex].dataset.value, "</a><span>").concat(linkDocument, "</span>");
         } else {
           this.mentionList.childNodes[this.itemIndex].dataset.value = "<a href=\"".concat(link, "\" target=").concat(itemTarget || this.options.linkTarget, " >").concat(this.mentionList.childNodes[this.itemIndex].dataset.value);
         }
